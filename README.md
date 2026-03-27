@@ -104,6 +104,49 @@ aws-cloud-infrastructure/
 
 ---
 
+## Screenshots
+
+### VPC & Networking
+
+![VPC](docs/screenshots/vpc.png)
+
+### Auto Scaling Group
+
+![ASG Details](docs/screenshots/asg-details.png)
+![ASG Activity](docs/screenshots/asg-activity.png)
+![ASG Instance Management](docs/screenshots/asg-instancemanagement.png)
+![ASG Metrics](docs/screenshots/asg-metrics.png)
+
+### Application Load Balancer
+
+![ALB Network](docs/screenshots/alb-network.png)
+![ALB Listeners & Rules](docs/screenshots/alb-listenersrules.png)
+
+### EventBridge
+
+![EventBridge Event Pattern](docs/screenshots/eventbridge-eventpattern.png)
+
+### Lambda
+
+![Lambda Triggers](docs/screenshots/lambda-triggers.png)
+![Lambda Destinations](docs/screenshots/lambda-destinations.png)
+
+### SNS
+
+![SNS Subscriptions](docs/screenshots/sns-subscriptions.png)
+
+### CloudWatch Alarm
+
+![CloudWatch Definition](docs/screenshots/cloudwatch-definition.png)
+![CloudWatch Metrics](docs/screenshots/cloudwatch-metrics.png)
+
+### Email Notifications
+
+![Email CloudWatch Alert](docs/screenshots/email-cloudwatch.png)
+![Email EC2 Launch Notification](docs/screenshots/email-eventec2launched.png)
+
+---
+
 ## Author
 
 **Angel Sechar**  
