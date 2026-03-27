@@ -6,7 +6,7 @@ Hands-on AWS infrastructure project demonstrating VPC design, EC2 auto scaling, 
 
 ## Architecture
 
-![Architecture Diagram](docs/AWS-architecture.png)
+![Architecture Diagram](docs/AWS-Architecture.png)
 
 ---
 
