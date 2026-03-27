@@ -157,7 +157,12 @@ aws-cloud-infrastructure/
 
 ### Application Load Balancer
 
+#### Network
+
 ![ALB Network](docs/screenshots/alb-network.png)
+
+#### Listeners and Rules
+
 ![ALB Listeners & Rules](docs/screenshots/alb-listenersrules.png)
 
 ### EventBridge
@@ -166,21 +171,36 @@ aws-cloud-infrastructure/
 
 ### Lambda
 
+#### Triggers
+
 ![Lambda Triggers](docs/screenshots/lambda-triggers.png)
+
+#### Destinations
+
 ![Lambda Destinations](docs/screenshots/lambda-destinations.png)
 
 ### SNS
 
 ![SNS Subscriptions](docs/screenshots/sns-subscriptions.png)
 
-### CloudWatch Alarm
+### CloudWatch
+
+#### CloudWatch Definition
 
 ![CloudWatch Definition](docs/screenshots/cloudwatch-definition.png)
+
+#### CloudWatch Metrics
+
 ![CloudWatch Metrics](docs/screenshots/cloudwatch-metrics.png)
 
 ### Email Notifications
 
+#### CloudWatch Alert
+
 ![Email CloudWatch Alert](docs/screenshots/email-cloudwatch.png)
+
+#### EventBridge Alert
+
 ![Email EC2 Launch Notification](docs/screenshots/email-eventec2launched.png)
 
 ---
