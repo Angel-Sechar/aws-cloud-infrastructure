@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "ec2_notifier" {
   function_name = "ParseEventBridgeToSNS"
-  role          = "arn:aws:iam::727081712948:role/service-role/ParseEventBridgeToSNS-role-6rdhw3jh"
+  role          = var.lambda_role_arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.14"
   timeout       = 3

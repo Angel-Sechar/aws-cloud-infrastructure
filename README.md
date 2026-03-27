@@ -10,7 +10,12 @@ Hands-on AWS infrastructure project demonstrating VPC design, EC2 auto scaling, 
 
 ### Notification flows
 
+#### CloudWatch
+
 ![CloudWatch Notification](docs/AWS-CloudWatch-Notification.png)
+
+#### EventBridge
+
 ![Event EC2 Launch Notification](docs/AWS-Event-Notification.png)
 
 ---
@@ -66,19 +71,27 @@ aws configure
 
 ## Usage
 
-```bash
+````bash
 # Clone the repository
 git clone git@github.com:your-username/aws-cloud-infrastructure.git
 cd aws-cloud-infrastructure/terraform
 
+# Copy the example variables file and fill in your own values
+
+copy terraform.tfvars.example terraform.tfvars
+
 # Initialize Terraform
+
 terraform init
 
 # Preview changes
+
 terraform plan
 
 # Apply infrastructure
+
 terraform apply
+
 ```
 
 ---
@@ -86,43 +99,45 @@ terraform apply
 ## Project Structure
 
 ```
+
 aws-cloud-infrastructure/
 ├── docs/
-│   ├── AWS-Architecture.png
-│   ├── AWS-CloudWatch-Notification.png
-│   ├── AWS-Event-Notification.png
-│   └── screenshots/
-│       ├── vpc.png
-│       ├── asg-details.png
-│       ├── asg-activity.png
-│       ├── asg-instancemanagement.png
-│       ├── asg-metrics.png
-│       ├── alb-network.png
-│       ├── alb-listenersrules.png
-│       ├── eventbridge-eventpattern.png
-│       ├── lambda-triggers.png
-│       ├── lambda-destinations.png
-│       ├── sns-subscriptions.png
-│       ├── cloudwatch-definition.png
-│       ├── cloudwatch-metrics.png
-│       ├── email-cloudwatch.png
-│       └── email-eventec2launched.png
+│ ├── AWS-Architecture.png
+│ ├── AWS-CloudWatch-Notification.png
+│ ├── AWS-Event-Notification.png
+│ └── screenshots/
+│ ├── vpc.png
+│ ├── asg-details.png
+│ ├── asg-activity.png
+│ ├── asg-instancemanagement.png
+│ ├── asg-metrics.png
+│ ├── alb-network.png
+│ ├── alb-listenersrules.png
+│ ├── eventbridge-eventpattern.png
+│ ├── lambda-triggers.png
+│ ├── lambda-destinations.png
+│ ├── sns-subscriptions.png
+│ ├── cloudwatch-definition.png
+│ ├── cloudwatch-metrics.png
+│ ├── email-cloudwatch.png
+│ └── email-eventec2launched.png
 ├── lambda/
-│   ├── lambda_function.py
-│   └── lambda_function.zip
+│ ├── lambda_function.py
+│ └── lambda_function.zip
 └── terraform/
-    ├── providers.tf
-    ├── vpc.tf
-    ├── subnets.tf
-    ├── internet_gateway.tf
-    ├── route_tables.tf
-    ├── alb.tf
-    ├── launch_template.tf
-    ├── asg.tf
-    ├── sns.tf
-    ├── lambda.tf
-    ├── eventbridge.tf
-    └── cloudwatch_alarms.tf
+├── providers.tf
+├── vpc.tf
+├── subnets.tf
+├── internet_gateway.tf
+├── route_tables.tf
+├── alb.tf
+├── launch_template.tf
+├── asg.tf
+├── sns.tf
+├── lambda.tf
+├── eventbridge.tf
+└── cloudwatch_alarms.tf
+
 ```
 
 ---
@@ -172,5 +187,7 @@ aws-cloud-infrastructure/
 
 ## Author
 
-**Angel Sechar**  
+**Angel Sechar**
 [GitHub](https://github.com/Angel-Sechar) · [LinkedIn](https://www.linkedin.com/in/angel-sechar-valdez/)
+```
+````

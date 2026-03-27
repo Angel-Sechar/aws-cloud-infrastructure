@@ -14,7 +14,7 @@ resource "aws_cloudwatch_event_rule" "ec2_launched" {
 resource "aws_cloudwatch_event_target" "lambda_target" {
   rule     = aws_cloudwatch_event_rule.ec2_launched.name
   arn      = aws_lambda_function.ec2_notifier.arn
-  role_arn = "arn:aws:iam::727081712948:role/service-role/Amazon_EventBridge_Invoke_Lambda_898743067"
+  role_arn = var.eventbridge_role_arn
 }
 
 resource "aws_lambda_permission" "allow_eventbridge" {
