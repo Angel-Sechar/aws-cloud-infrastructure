@@ -120,6 +120,7 @@ aws-cloud-infrastructure/
 │ ├── cloudwatch-definition.png
 │ ├── cloudwatch-metrics.png
 │ ├── email-cloudwatch.png
+│ ├── sg-webapplication.png
 │ └── email-eventec2launched.png
 ├── lambda/
 │ ├── lambda_function.py
