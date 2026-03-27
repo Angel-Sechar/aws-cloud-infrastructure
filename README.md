@@ -150,9 +150,20 @@ aws-cloud-infrastructure/
 
 ### Auto Scaling Group
 
+#### ASG Details
+
 ![ASG Details](docs/screenshots/asg-details.png)
+
+#### ASG Activity
+
 ![ASG Activity](docs/screenshots/asg-activity.png)
+
+#### ASG Instance Management
+
 ![ASG Instance Management](docs/screenshots/asg-instancemanagement.png)
+
+#### ASG Metrics
+
 ![ASG Metrics](docs/screenshots/asg-metrics.png)
 
 ### Application Load Balancer
@@ -202,6 +213,10 @@ aws-cloud-infrastructure/
 #### EventBridge Alert
 
 ![Email EC2 Launch Notification](docs/screenshots/email-eventec2launched.png)
+
+### Security Group
+
+![Security Group](docs/screenshots/sg-webapplication.png)
 
 ---
 
