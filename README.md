@@ -8,6 +8,11 @@ Hands-on AWS infrastructure project demonstrating VPC design, EC2 auto scaling, 
 
 ![Architecture Diagram](docs/AWS-Architecture.png)
 
+### Notification flows
+
+![CloudWatch Notification](docs/AWS-CloudWatch-Notification.png)
+![Event EC2 Launch Notification](docs/AWS-Event-Notification.png)
+
 ---
 
 ## Technologies
@@ -83,7 +88,25 @@ terraform apply
 ```
 aws-cloud-infrastructure/
 ├── docs/
-│   └── architecture.png
+│   ├── AWS-Architecture.png
+│   ├── AWS-CloudWatch-Notification.png
+│   ├── AWS-Event-Notification.png
+│   └── screenshots/
+│       ├── vpc.png
+│       ├── asg-details.png
+│       ├── asg-activity.png
+│       ├── asg-instancemanagement.png
+│       ├── asg-metrics.png
+│       ├── alb-network.png
+│       ├── alb-listenersrules.png
+│       ├── eventbridge-eventpattern.png
+│       ├── lambda-triggers.png
+│       ├── lambda-destinations.png
+│       ├── sns-subscriptions.png
+│       ├── cloudwatch-definition.png
+│       ├── cloudwatch-metrics.png
+│       ├── email-cloudwatch.png
+│       └── email-eventec2launched.png
 ├── lambda/
 │   ├── lambda_function.py
 │   └── lambda_function.zip
