@@ -71,7 +71,7 @@ aws configure
 
 ## Usage
 
-````bash
+```bash
 # Clone the repository
 git clone git@github.com:your-username/aws-cloud-infrastructure.git
 cd aws-cloud-infrastructure/terraform
@@ -189,5 +189,7 @@ aws-cloud-infrastructure/
 
 **Angel Sechar**
 [GitHub](https://github.com/Angel-Sechar) · [LinkedIn](https://www.linkedin.com/in/angel-sechar-valdez/)
+
 ```
-````
+
+```
