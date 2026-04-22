@@ -14,7 +14,6 @@ private_subnet_b_cidr = "10.0.4.0/24"
 availability_zone_a   = "sa-east-1a"
 availability_zone_b   = "sa-east-1c"
 
-ami_id        = "ami-id-00"
 instance_type = "t2.micro"
 key_name      = "your-key-pair-name"
 

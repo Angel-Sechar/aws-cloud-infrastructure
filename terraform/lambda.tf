@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "ec2_notifier" {
   function_name = "ParseEventBridgeToSNS"
-  role          = var.lambda_role_arn
+  role          = aws_iam_role.lambda_role.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = var.lambda_runtime
   timeout       = var.lambda_timeout

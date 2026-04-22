@@ -1,7 +1,7 @@
 resource "aws_launch_template" "main" {
   name          = "LT-EC2-SERVERAPP"
   description   = "Version 1.0"
-  image_id      = var.ami_id
+  image_id      = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
   key_name      = var.key_name
 

@@ -4,16 +4,6 @@ variable "aws_region" {
   default     = "sa-east-1"
 }
 
-variable "lambda_role_arn" {
-  description = "IAM role ARN for the Lambda function."
-  type        = string
-}
-
-variable "eventbridge_role_arn" {
-  description = "IAM role ARN for EventBridge to invoke Lambda."
-  type        = string
-}
-
 variable "owner" {
   description = "Owner tag applied to resources for identification."
   type        = string
@@ -66,11 +56,6 @@ variable "security_group_id" {
   type        = string
 }
 
-variable "ami_id" {
-  description = "AMI ID used by the EC2 launch template."
-  type        = string
-}
-
 variable "instance_type" {
   description = "EC2 instance type for the Auto Scaling Group."
   type        = string
@@ -111,10 +96,15 @@ variable "sns_email" {
   type        = string
 }
 
+variable "certificate_arn" {
+  description = "ARN of the ACM SSL certificate for HTTPS."
+  type        = string
+}
+
 variable "lambda_runtime" {
   description = "Runtime for the Lambda function."
   type        = string
-  default     = "python3.13"
+  default     = "python3.14"
 }
 
 variable "lambda_timeout" {
