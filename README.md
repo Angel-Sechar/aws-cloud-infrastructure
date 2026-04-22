@@ -1,8 +1,10 @@
 # AWS Cloud Infrastructure
 
-Production-grade AWS infrastructure built entirely with Terraform — featuring multi-AZ networking,
-auto-scaling EC2 compute, and a serverless event-driven notification pipeline
-(EventBridge → Lambda → SNS). Designed to reflect real-world cloud engineering standards.
+Skip the console. Skip the manual steps. Skip the "works on my account" problem.
+
+This solution gives you → multi-AZ VPC, Auto Scaling on real load, and
+an EventBridge → Lambda → SNS pipeline that knows before you do.
+Managed entirely in Terraform.
 
 ---
 
