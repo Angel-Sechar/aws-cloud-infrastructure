@@ -27,7 +27,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Zip Lambda
+      - name: Build Lambda zip
         run: cd lambda && zip lambda_function.zip lambda_function.py
 
       - name: Terraform Init

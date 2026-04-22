@@ -17,9 +17,16 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-resource "aws_iam_role_policy_attachment" "lambda_sns" {
-  role       = aws_iam_role.lambda_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+resource "aws_iam_role_policy" "lambda_sns_publish" {
+  role = aws_iam_role.lambda_role.namess
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action   = "sns:Publish"
+      Effect   = "Allow"
+      Resource = aws_sns_topic.notifications.arn
+    }]
+  })
 }
 
 # EventBridge Role
@@ -36,7 +43,14 @@ resource "aws_iam_role" "eventbridge_role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "eventbridge_lambda" {
-  role       = aws_iam_role.eventbridge_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+resource "aws_iam_role_policy" "eventbridge_lambda_invoke" {
+  role = aws_iam_role.eventbridge_role.name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action   = "lambda:InvokeFunction"
+      Effect   = "Allow"
+      Resource = aws_lambda_function.ec2_notifier.arn
+    }]
+  })
 }

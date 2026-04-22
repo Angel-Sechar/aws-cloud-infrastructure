@@ -6,7 +6,7 @@ resource "aws_lb" "main" {
   subnets            = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
   idle_timeout       = 60
 
-  enable_deletion_protection = false
+  enable_deletion_protection = true
 }
 
 resource "aws_lb_target_group" "main" {

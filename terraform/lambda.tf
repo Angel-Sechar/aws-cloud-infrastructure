@@ -7,4 +7,10 @@ resource "aws_lambda_function" "ec2_notifier" {
   memory_size   = var.lambda_memory_size
   architectures = ["x86_64"]
   filename      = "../lambda/lambda_function.zip"
+  environment {
+    variables = {
+      SNS_TOPIC_ARN = aws_sns_topic.notifications.arn
+    }
+  }
+
 }
