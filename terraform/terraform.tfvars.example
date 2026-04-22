@@ -1,10 +1,5 @@
-aws_region           = "sa-east-1"
-owner                = "your name"
-
-lambda_role_arn      = "arn:aws:iam::YOUR_ACCOUNT_ID:role/your-lambda-role"
-eventbridge_role_arn = "arn:aws:iam::YOUR_ACCOUNT_ID:role/your-eventbridge-role"
-
-security_group_id    = "sg-id-00"
+aws_region = "sa-east-1"
+owner      = "your-name"
 
 vpc_cidr              = "10.0.0.0/16"
 public_subnet_a_cidr  = "10.0.1.0/24"
@@ -15,14 +10,13 @@ availability_zone_a   = "sa-east-1a"
 availability_zone_b   = "sa-east-1c"
 
 instance_type = "t2.micro"
-key_name      = "your-key-pair-name"
 
 asg_min_size         = 1
 asg_max_size         = 3
 asg_desired_capacity = 1
 
-lambda_runtime    = "python3.13"
-lambda_timeout    = 3
+lambda_runtime     = "python3.13"
+lambda_timeout     = 3
 lambda_memory_size = 128
 
 cpu_alarm_threshold = 60

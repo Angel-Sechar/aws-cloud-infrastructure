@@ -1,5 +1,5 @@
 resource "aws_security_group" "web_app" {
-  name        = "sg-web-application"
+  name        = "web-application"
   description = "Security group for ALB and EC2 instances."
   vpc_id      = aws_vpc.ecommerce_campus_vpc.id
 
@@ -36,6 +36,6 @@ resource "aws_security_group" "web_app" {
   }
 
   tags = {
-    Name = "sg-web-application"
+    Name = "web-application"
   }
 }

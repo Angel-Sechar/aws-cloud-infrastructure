@@ -51,20 +51,10 @@ variable "availability_zone_b" {
   default     = "sa-east-1c"
 }
 
-variable "security_group_id" {
-  description = "Security group ID attached to EC2 instances and the ALB."
-  type        = string
-}
-
 variable "instance_type" {
   description = "EC2 instance type for the Auto Scaling Group."
   type        = string
   default     = "t2.micro"
-}
-
-variable "key_name" {
-  description = "Name of the EC2 key pair for SSH access."
-  type        = string
 }
 
 variable "asg_min_size" {
@@ -93,11 +83,6 @@ variable "cpu_alarm_threshold" {
 
 variable "sns_email" {
   description = "Email address that will receive SNS notifications."
-  type        = string
-}
-
-variable "certificate_arn" {
-  description = "ARN of the ACM SSL certificate for HTTPS."
   type        = string
 }
 
