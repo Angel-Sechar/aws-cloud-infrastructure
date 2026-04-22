@@ -1,9 +1,8 @@
 resource "aws_autoscaling_group" "main" {
-  name = "ASG-EC2-APP"
-
-  min_size         = 1
-  max_size         = 3
-  desired_capacity = 1
+  name             = "ASG-EC2-APP"
+  min_size         = var.asg_min_size
+  max_size         = var.asg_max_size
+  desired_capacity = var.asg_desired_capacity
 
   vpc_zone_identifier = [
     aws_subnet.private_subnet_a.id,

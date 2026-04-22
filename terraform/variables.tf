@@ -110,3 +110,21 @@ variable "sns_email" {
   description = "Email address that will receive SNS notifications."
   type        = string
 }
+
+variable "lambda_runtime" {
+  description = "Runtime for the Lambda function."
+  type        = string
+  default     = "python3.13"
+}
+
+variable "lambda_timeout" {
+  description = "Timeout in seconds for the Lambda function."
+  type        = number
+  default     = 3
+}
+
+variable "lambda_memory_size" {
+  description = "Memory size in MB for the Lambda function."
+  type        = number
+  default     = 128
+}
