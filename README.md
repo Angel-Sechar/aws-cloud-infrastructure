@@ -101,23 +101,23 @@ cd aws-cloud-infrastructure
 aws configure
 ```
 
-### 3. Fill in your variables
+### 3. Build the Lambda package
 
 ```bash
-cp terraform/terraform.tfvars.example terraform/terraform.tfvars
+cd lambda && zip lambda_function.zip lambda_function.py
 ```
-
-Edit `terraform.tfvars` and replace `owner` and `sns_email` with your own values. Variables with defaults do not need to be changed unless you want to customize the infrastructure.
 
 ### 4. Deploy
 
 ```bash
 cd terraform
 terraform init
+terraform validate
+terraform plan
 terraform apply
 ```
 
-Review the plan and type `yes` when prompted. Once complete, Terraform will output the ALB DNS name, ASG name, Lambda function name, and SNS topic ARN.
+Enter `owner` and `sns_email` when prompted. Once complete, Terraform will output the ALB DNS name, ASG name, Lambda function name, and SNS topic ARN.
 
 ### 5. Confirm SNS subscription
 
