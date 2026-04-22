@@ -18,7 +18,7 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
 }
 
 resource "aws_iam_role_policy" "lambda_sns_publish" {
-  role = aws_iam_role.lambda_role.namess
+  role = aws_iam_role.lambda_role.name
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{

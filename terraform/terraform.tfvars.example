@@ -15,7 +15,7 @@ asg_min_size         = 1
 asg_max_size         = 3
 asg_desired_capacity = 1
 
-lambda_runtime     = "python3.13"
+lambda_runtime     = "python3.14"
 lambda_timeout     = 3
 lambda_memory_size = 128
 

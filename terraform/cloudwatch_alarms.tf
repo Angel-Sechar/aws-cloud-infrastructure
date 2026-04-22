@@ -3,7 +3,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_above_60" {
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = 1
   metric_name         = "CPUUtilization"
-  namespace           = "AWS/EC2"
+  namespace           = "AWS/AutoScaling"
   period              = 120
   statistic           = "Average"
   threshold           = var.cpu_alarm_threshold
