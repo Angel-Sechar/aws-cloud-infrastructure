@@ -1,6 +1,8 @@
 # AWS Cloud Infrastructure
 
-Hands-on AWS infrastructure project demonstrating VPC design, EC2 auto scaling, load balancing, and serverless event-driven architecture using EventBridge, Lambda, and SNS. Managed as code with Terraform.
+Production-grade AWS infrastructure built entirely with Terraform — featuring multi-AZ networking,
+auto-scaling EC2 compute, and a serverless event-driven notification pipeline
+(EventBridge → Lambda → SNS). Designed to reflect real-world cloud engineering standards.
 
 ---
 
