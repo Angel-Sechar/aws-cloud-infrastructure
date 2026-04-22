@@ -75,10 +75,34 @@ variable "asg_desired_capacity" {
   default     = 1
 }
 
-variable "cpu_alarm_threshold" {
-  description = "CPU utilization percentage that triggers the CloudWatch alarm."
+variable "cpu_scale_out_threshold" {
+  description = "CPU utilization percentage that triggers the CloudWatch alarm and scale-out policy."
   type        = number
   default     = 60
+}
+
+variable "cpu_scale_in_threshold" {
+  description = "CPU utilization percentage that triggers the CloudWatch alarm and scale-in policy."
+  type        = number
+  default     = 30
+}
+
+variable "scale_out_evaluation_periods" {
+  description = "Number of periods CPU must be above threshold before scaling out."
+  type        = number
+  default     = 2
+}
+
+variable "scale_in_evaluation_periods" {
+  description = "Number of periods CPU must be below threshold before scaling in."
+  type        = number
+  default     = 3
+}
+
+variable "alarm_period" {
+  description = "Period in seconds for CloudWatch alarm evaluation."
+  type        = number
+  default     = 120
 }
 
 variable "sns_email" {

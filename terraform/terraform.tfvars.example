@@ -19,6 +19,10 @@ lambda_runtime     = "python3.14"
 lambda_timeout     = 3
 lambda_memory_size = 128
 
-cpu_alarm_threshold = 60
+cpu_scale_out_threshold      = 60
+cpu_scale_in_threshold       = 30
+scale_out_evaluation_periods = 2
+scale_in_evaluation_periods  = 3
+alarm_period                 = 120
 
 sns_email = "your@email.com"
