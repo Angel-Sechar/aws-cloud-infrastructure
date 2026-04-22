@@ -60,85 +60,95 @@ A CloudWatch alarm monitors average CPU utilization of the ASG. When CPU exceeds
 
 ## Prerequisites
 
-- [Terraform](https://developer.hashicorp.com/terraform/install) >= 6.0
+- [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.5
 - [AWS CLI](https://aws.amazon.com/cli/) configured with valid credentials
+- AWS account
 
 ```bash
 aws configure
 ```
 
+### Terraform Provider
+
+- AWS provider (`hashicorp/aws`) ~> 6.0
+
 ---
 
 ## Usage
 
+### 1. Clone the repository
+
 ```bash
-# Clone the repository
 git clone git@github.com:your-username/aws-cloud-infrastructure.git
-cd aws-cloud-infrastructure/terraform
-
-# Copy the example variables file and fill in your own values
-
-copy terraform.tfvars.example terraform.tfvars
-
-# Initialize Terraform
-
-terraform init
-
-# Preview changes
-
-terraform plan
-
-# Apply infrastructure
-
-terraform apply
-
+cd aws-cloud-infrastructure
 ```
 
----
+### 2. Configure AWS credentials
+
+```bash
+aws configure
+```
+
+You will be prompted for:
+
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default region (e.g. `sa-east-1`)
+- Default output format (just press Enter)
+
+### 3. Fill in your variables
+
+```bash
+cp terraform/terraform.tfvars.example terraform/terraform.tfvars
+```
+
+Edit `terraform.tfvars` and replace every value with your own. Variables with defaults do not need to be changed unless you want to customize the infrastructure.
+
+### 4. Deploy
+
+```bash
+cd terraform
+terraform init
+terraform apply
+```
+
+Review the plan and type `yes` when prompted. Once complete, Terraform will output the ALB DNS name, ASG name, Lambda function name, and SNS topic ARN.
+
+### 5. Confirm SNS subscription
+
+AWS will send a confirmation email to the address set in `sns_email`. Click the confirmation link to start receiving notifications.
 
 ## Project Structure
 
 ```
-
 aws-cloud-infrastructure/
+├── .github/
+│   └── workflows/
+│       └── terraform.yml
 ├── docs/
-│ ├── AWS-Architecture.png
-│ ├── AWS-CloudWatch-Notification.png
-│ ├── AWS-Event-Notification.png
-│ └── screenshots/
-│ ├── vpc.png
-│ ├── asg-details.png
-│ ├── asg-activity.png
-│ ├── asg-instancemanagement.png
-│ ├── asg-metrics.png
-│ ├── alb-network.png
-│ ├── alb-listenersrules.png
-│ ├── eventbridge-eventpattern.png
-│ ├── lambda-triggers.png
-│ ├── lambda-destinations.png
-│ ├── sns-subscriptions.png
-│ ├── cloudwatch-definition.png
-│ ├── cloudwatch-metrics.png
-│ ├── email-cloudwatch.png
-│ ├── sg-webapplication.png
-│ └── email-eventec2launched.png
+│   ├── AWS-Architecture.png
+│   ├── AWS-CloudWatch-Notification.png
+│   ├── AWS-Event-Notification.png
+│   └── screenshots/
 ├── lambda/
-│ ├── lambda_function.py
-│ └── lambda_function.zip
+│   ├── lambda_function.py
+│   └── lambda_function.zip
 └── terraform/
-├── providers.tf
-├── vpc.tf
-├── subnets.tf
-├── internet_gateway.tf
-├── route_tables.tf
-├── alb.tf
-├── launch_template.tf
-├── asg.tf
-├── sns.tf
-├── lambda.tf
-├── eventbridge.tf
-└── cloudwatch_alarms.tf
-
+    ├── provider.tf
+    ├── variables.tf
+    ├── outputs.tf
+    ├── vpc.tf
+    ├── subnets.tf
+    ├── internet_gateway.tf
+    ├── route_tables.tf
+    ├── alb.tf
+    ├── launch_template.tf
+    ├── asg.tf
+    ├── sns.tf
+    ├── lambda.tf
+    ├── eventbridge.tf
+    ├── cloudwatch_alarms.tf
+    └── terraform.tfvars.example
 ```
 
 ---

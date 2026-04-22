@@ -2,7 +2,7 @@ resource "aws_lb" "main" {
   name               = "LB-EC2-01"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-02f15d9eea61e8a1d"]
+  security_groups    = [var.security_group_id]
   subnets            = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
   idle_timeout       = 60
 
